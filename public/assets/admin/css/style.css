@@ -1,0 +1,152 @@
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    .add_asterisk label.control-label:after {
+        content:" *";
+        color:red;
+      }
+
+    .select2{
+        width:100% !important;
+    }
+    
+    .no-spacing tr>td{
+        margin: 0.2 !important;
+        padding: 0.2em !important;
+    }
+
+    .pointer{
+        cursor: pointer;
+    }
+
+    .noHover{
+        pointer-events: none !important;
+    }
+    
+    .no-border{
+        border: none;
+    }
+
+    /*
+    creating table only using div
+    */
+
+    .css-flex-table {
+        display: flex;
+        width: 100%;
+        }
+        
+        .css-flex-table-header,
+        .css-flex-table-body {
+        display: flex;
+        flex: 0 0 100%;
+        }
+        
+        .css-flex-table,
+        .css-flex-table-body {
+        flex-wrap: wrap;
+        }
+        
+        .css-flex-table-header div {
+        padding: 2px;
+        text-align: center;
+        font-weight: bold;
+        background-color: rgb(191, 191, 191);
+        }
+        
+        .css-flex-table-header div,
+        .css-flex-table-body div {
+        flex: 0 1 120px;
+        padding: 0 2px;
+        border: 1px solid rgb(255, 255, 255);
+        box-sizing: border-box;
+        }
+        
+        /* .css-flex-table-header div:nth-of-type(9n),
+        .css-flex-table-body div:nth-of-type(9n) {
+        flex: 0 1 calc(100% - 308px);
+        } */
+
+/*
+css grid table
+*/
+
+.css-grid-table,
+.css-grid-table-header,
+.css-grid-table-body {
+display: grid;
+}
+
+.css-grid-table {
+grid-template-rows: 24px 72px;
+width: 80%;
+}
+
+.css-grid-table-header,
+.css-grid-table-body {
+grid-template-columns: auto auto auto minmax(150px, 25%);
+line-height: 24px; 
+}
+
+.css-grid-table-header {
+grid-column-gap: 2px;
+grid-template-rows: auto;
+}
+
+.css-grid-table-body {
+grid-template-rows: auto auto auto;
+}
+
+.css-grid-table-header div {
+text-align: center;
+font-weight: bold;
+background-color: rgb(191, 191, 191);
+}
+
+.amount-label{
+    color: green;
+    font-weight: bold;
+}
+
+.show_unit{
+    color: #0C05F0;
+    font-weight: bold;
+}
+
+.small_input_box{
+    height: 25px !important;
+    padding: 1.5px !important;
+}
+
+.small_input_button{
+    height: 20px !important;
+    padding: 1.5px !important;
+}
+
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    .print-area, .print-area * {
+      visibility: visible;
+      margin: 0px auto; 
+    }
+
+    .print-area .display_when_print{
+        display: block !important;
+    }
+
+    .display_when_print *{
+        visibility: visible;
+        margin: 0px auto;
+        display: block !important;
+    }
+
+  }
+  
